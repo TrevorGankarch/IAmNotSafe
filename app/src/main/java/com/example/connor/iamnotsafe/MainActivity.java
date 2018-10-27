@@ -1,6 +1,7 @@
 package com.example.connor.iamnotsafe;
 
 import android.content.Intent;
+import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -24,4 +25,8 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void settings_onClick(View view) {
+        Intent intent = new Intent(this, SettingsActivity.class);
+        startActivity(intent);
+    }
 }
