@@ -1,6 +1,7 @@
 package com.example.connor.iamnotsafe;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -22,6 +23,14 @@ public class MainActivity extends AppCompatActivity {
         String message = "TEST";
         intent.putExtra(EXTRA_MESSAGE, message);
         startActivity(intent);
+
+        //send message
+        String pnum = "6149156160";
+        String pmes = "Hey dude its a message cool";
+        Uri uri = Uri.parse("smsto: " + pnum);
+        Intent intent2 = new Intent(Intent.ACTION_SENDTO, uri);
+        intent2.putExtra("text body", pmes);
+        startActivity(intent2);
     }
 
 }
