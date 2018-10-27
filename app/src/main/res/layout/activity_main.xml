@@ -12,6 +12,7 @@
         android:layout_width="190dp"
         android:layout_height="78dp"
         android:background="@color/colorPrimaryDark"
+        android:onClick="sendNotifications"
         android:text="HELP"
         android:textSize="30sp"
         android:typeface="normal"
