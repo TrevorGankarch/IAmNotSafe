@@ -4,8 +4,11 @@ import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.telephony.SmsManager;
 import android.view.View;
 import android.widget.EditText;
+
+
 
 public class MainActivity extends AppCompatActivity {
     public static final String EXTRA_MESSAGE = "com.example.IAmNotSafe.MESSAGE";
@@ -27,10 +30,11 @@ public class MainActivity extends AppCompatActivity {
         //send message
         String pnum = "6149156160";
         String pmes = "Hey dude its a message cool";
-        Uri uri = Uri.parse("smsto: " + pnum);
-        Intent intent2 = new Intent(Intent.ACTION_SENDTO, uri);
-        intent2.putExtra("text body", pmes);
-        startActivity(intent2);
+        SmsManager.getDefault().sendTextMessage(pnum, null, pmes, null, null);
+//        Uri uri = Uri.parse("smsto: " + pnum);
+//        Intent intent2 = new Intent(Intent.ACTION_SENDTO, uri);
+//        intent2.putExtra("text body", pmes);
+//        startActivity(intent2);
     }
 
 }
